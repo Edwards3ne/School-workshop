@@ -1,0 +1,51 @@
+/*import java.util.Scanner;
+
+public class FunctionsPalindromeSearcher2 {
+    public static void main(String[] args) {
+
+
+        Scanner userInput = new Scanner(System.in);
+        System.out.println("insert your words : ");
+        String input = userInput.next();
+        System.out.println(searchPalindrome(input));
+
+    }
+
+    public static String searchPalindrome(String input) {
+
+        String formattedInput = "@" + input + "#";
+        char inputCharArr[] = formattedInput.toCharArray();
+
+        int radius[][] = new int[2][input.length() + 1];
+
+        String palindromes = new String();
+        int max;
+        for (int j = 0; j <= 1; j++) {
+            radius[j][0] = max = 0;
+            int i = 1;
+            while (i <= input.length()) {
+                palindromes.add(Character.toString(inputCharArr[i]));
+                while (inputCharArr[i - max - 1] == inputCharArr[i + j + max])
+                    max++;
+                radius[j][i] = max;
+                int k = 1;
+                while ((radius[j][i - k] != max - k) && (k < max)) {
+                    radius[j][i + k] = Math.min(radius[j][i - k], max - k);
+                    k++;
+                }
+                max = Math.max(max - k, 0);
+                i += k;
+            }
+
+        }
+        for (int i = 1; i <= input.length(); i++) {
+            for (int j = 0; j <= 1; j++) {
+                for (max = radius[j][i]; max > 0; max--) {
+                    palindromes.add(input.substring(i - max - 1, max + j + i - 1));
+                }
+            }
+        }
+
+
+    }
+}*/

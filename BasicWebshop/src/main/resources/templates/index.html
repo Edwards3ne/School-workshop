@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+    <link rel="stylesheet" href="./style.css"/>
+    <title>Index</title>
+</head>
+<body>
+<p th:text="${companyName}" id="mainName">Company name</p>
+<ul>
+    <li><a href="/only">ONLY AVAILABLE</a></li>
+    <li><a href="/cheapest">CHEAPEST FIRST</a></li>
+    <li><a href="/nike">CONTAINS NIKE</a></li>
+    <li><a href="/average">AVERAGE STOCK</a></li>
+    <li><a href="/expensive">MOST EXPENSIVE AVAILABLE</a></li>
+</ul>
+<form action="#" th:action="@{/search}" method="post">
+    <label for="search">Search for : </label><input id="search" type="search" name="searchCont">
+    <input type="submit" value="Search" id="searchButton">
+</form>
+<table>
+    <tr>
+        <th id="head"><strong>Name</strong></th>
+        <th id="head"><strong>Description</strong></th>
+        <th id="head"><strong>Price</strong></th>
+        <th id="head"><strong>Quantity of stock</strong></th>
+    </tr>
+    <tr id="show" th:each="currentItem: ${listOfItems}" th:object="${currentItem}">
+        <td id="show" th:text="*{name}"></td>
+        <td id="show" th:text="*{description}"></td>
+        <td id="show" th:text="*{price}+' Kč'"></td>
+        <td id="show" th:text="*{quantity}"></td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <title>Title</title>
+</head>
+<body>
+
+<table>
+    <tr>
+        <th th:text="@{name}">name</th>
+        <th th:text="@{balance}">balance</th>
+        <th th:text="@{animalType}">animal type</th>
+        <th th:text="'index'">index</th>
+        <th th:text="@{isKing}">is King</th>
+    </tr>
+    <tr th:each="currentAcc: ${account}" th:object="${currentAcc}" th:class="${currentAcc.getKing()}?'isKing'">
+        <td th:text="*{name}">name</td>
+        <td th:text="*{balance}">balance</td>
+        <td th:text="*{animalType}">animalType</td>
+        <td th:text="${currentAccStat.index}">index</td>
+        <td th:text="${currentAcc.getKing()}" >is King</td>
+    </tr>
+
+</table>
+<form action="#" th:action="@{/accounts}" method="get">
+    <label for="type">Type:</label><select id="type" name="bad">
+    <option value="true">Bad Guy</option>
+    <option value="false">Good One</option>
+    <option value="null">All</option>
+</select>
+    <input type="submit">
+</form>
+
+<form action="#" th:action="@{/accounts2}" method="get">
+    <label for="choose">Chose bank account :</label><select id="choose"  name="accRaise">
+    <option th:each="currentAcc: ${account}" th:object="${currentAcc}" th:value="*{name}" th:text="*{name}">name</option>
+</select>
+    <input type="submit" value="submit">
+</form>
+
+<form action="#" th:action="@{/newAccount}" method="get">
+    <label for="newname">Name: </label><input name="name" id="newname" type="text">
+    <label for="newbalance">Balance: </label><input name="balance" id="newbalance" type="number">
+    <label for="newAnType">Animal type: </label><input name="animalType" id="newAnType" type="text">
+    <label for="isKing">is king? :</label><select id="isKing" name="isKing">
+    <option value="true">yes</option>
+    <option value="false">nope</option>
+    </select>
+    <label for="isBad">is bad? :</label><select id="isBad" name="isBad">
+    <option value="true">yes</option>
+    <option value="false">nope</option>
+    </select>
+    <input type="submit" value="submit">
+
+</form>
+
+
+</body>
+</html>

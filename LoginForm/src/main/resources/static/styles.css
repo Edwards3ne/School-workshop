@@ -1,0 +1,29 @@
+form,label,input{
+
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+form{
+    background-color: wheat;
+    padding: 50px 50px;
+}
+input{
+    background-color: white;
+    width: 200px;
+    height: 30px;
+    font-size: 25px;
+}
+.submit{
+    border-radius: 15px;
+    width: 150px;
+    height: 50px;
+    margin-top: 20px;
+    background-color: red;
+    font-size: 25px;
+    color: white;
+
+}
+p{
+    font-size: 25px;
+}

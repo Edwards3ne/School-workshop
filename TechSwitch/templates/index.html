@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+</head>
+<body>
+<a href="meals/addMeal/">add new meal</a>
+{% if meals %}
+<ul>
+    {% for meal in meals %}
+    <li>
+        {{ meal.name }}
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+<form method="GET" action="" >
+    {% csrf_token %}
+    <label for="id">Insert ID</label><input type="text" id="id" name="mealId" >
+    <input type="submit">
+</form>
+
+{% if getMeal %}
+<h4>
+    {{ getMeal.name}}
+</h4>
+{% endif %}
+</body>
+</html>

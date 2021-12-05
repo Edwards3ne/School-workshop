@@ -1,0 +1,26 @@
+table{
+    background-color: wheat;
+    margin: 50px auto;
+}
+tr,th,td,table {
+    border-radius: 6px;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+.isKing{
+    color: gold;
+    background-color: cornflowerblue;
+}
+body{
+    background-color: bisque;
+}
+form,label,input{
+    margin: 20px auto;
+    display: block;
+    text-align: center;
+
+}
+label,select,form{
+
+}
+

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+    <link rel="stylesheet" href="./style.css"/>
+    <title>Index</title>
+</head>
+<body>
+<p th:text="${companyName}" id="mainName">Company name</p>
+<ul>
+    <li><a href="/only">ONLY AVAILABLE</a></li>
+    <li><a href="/cheapest">CHEAPEST FIRST</a></li>
+    <li><a href="/nike">CONTAINS NIKE</a></li>
+    <li><a href="/average">AVERAGE STOCK</a></li>
+    <li><a href="/expensive">MOST EXPENSIVE AVAILABLE</a></li>
+</ul>
+<p th:utext="'<strong>Average stock: '+${average}+'</strong>'" id="average">Company name</p>
+</body>
+</html>
